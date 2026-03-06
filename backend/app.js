@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import filesRouter from "./src/routes/files.route.js";
+import nodesRoute from "./src/routes/nodes.route.js"
 const app = express();
 
 app.use(cors());
@@ -10,6 +11,8 @@ app.get("/", (req, res) => {
   res.json({ message: "ThreadMind API is running" });
 });
 app.use("/api/files", filesRouter);
+app.use("/api/nodes", nodesRoute);
+
 
 const PORT = process.env.PORT || 3000;
 
