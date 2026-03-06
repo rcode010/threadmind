@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import filesRouter from "./src/routes/files.route.js";
-import nodesRoute from "./src/routes/nodes.route.js"
+import nodesRoute from "./src/routes/nodes.route.js";
+import edgeRoute from "./src/routes/edges.route.js";
 const app = express();
 
 app.use(cors());
@@ -12,7 +13,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/files", filesRouter);
 app.use("/api/nodes", nodesRoute);
-
+app.use("/api/edges", edgeRoute);
 
 const PORT = process.env.PORT || 3000;
 
