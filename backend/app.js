@@ -1,20 +1,20 @@
-import express from 'express'
-import cors from 'cors'
-import filesRouter from './src/routes/files.route.js'
-const app = express()
+import express from "express";
+import cors from "cors";
+import filesRouter from "./src/routes/files.route.js";
+const app = express();
 
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.json({ message: 'ThreadMind API is running' })
-})
-app.use("/api/files",filesRouter)
+app.get("/", (req, res) => {
+  res.json({ message: "ThreadMind API is running" });
+});
+app.use("/api/files", filesRouter);
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+  console.log(`Server running on port ${PORT}`);
+});
 
-export default app
+export default app;
